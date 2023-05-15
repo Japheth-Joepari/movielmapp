@@ -8,6 +8,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Detail() {
+  const loader = {
+    width: "100vw",
+    height: "100%",
+    display: "flex",
+    marginTop: "12rem",
+    flexDirection: "row",
+    justifyContent: "center",
+  };
+
   const { id } = useParams();
   const [data, setData] = useState(null);
   const path = "https://image.tmdb.org/t/p/original";
@@ -28,7 +37,11 @@ export default function Detail() {
   });
 
   if (!data) {
-    return <p style={{ color: "white" }}>Loading...</p>;
+    return (
+      <div style={loader}>
+        <img src={"https://i.gifer.com/VAyR.gif"} alt="" />
+      </div>
+    );
   }
 
   const { res } = data;

@@ -121,6 +121,7 @@ export default function PopularMovies({
                     vote_average={movie.vote_average}
                     release_date={movie.release_date}
                     poster_path={movie.poster_path}
+                    key={movie.id}
                   />
                 ))}
             </ul>

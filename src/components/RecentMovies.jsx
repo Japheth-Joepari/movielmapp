@@ -1,9 +1,6 @@
 import Movie from "./Movie";
 
 export default function RecentMovies({ res, imagePath }) {
-  const imageStyle = {
-    width: "19rem",
-  };
   return (
     <div>
       <section className="upcoming">
@@ -21,7 +18,6 @@ export default function RecentMovies({ res, imagePath }) {
                 title={movie.title}
                 id={movie.id}
                 imagePath={imagePath}
-                imageStyle={imageStyle}
                 popularity={movie.popularity}
                 vote_average={movie.vote_average}
                 release_date={movie.release_date}

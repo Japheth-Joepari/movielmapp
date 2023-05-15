@@ -31,6 +31,14 @@ async function fetchData() {
 }
 
 function HomePage() {
+  const loader = {
+    width: "100vw",
+    height: "100%",
+    display: "flex",
+    marginTop: "12rem",
+    flexDirection: "row",
+    justifyContent: "center",
+  };
   const imagePath = "https://image.tmdb.org/t/p/original";
   const [data, setData] = useState(null);
 
@@ -43,7 +51,11 @@ function HomePage() {
   });
 
   if (!data) {
-    return <p style={{ color: "white" }}>Loading...</p>;
+    return (
+      <div style={loader}>
+        <img src={"https://i.gifer.com/VAyR.gif"} alt="" />
+      </div>
+    );
   }
 
   return (

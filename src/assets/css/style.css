@@ -369,6 +369,12 @@ body.active {
   margin-left: auto;
 }
 
+.white {
+  color: yellow;
+  font-weight: 500;
+  font-size: 13px;
+}
+
 .movie-card :is(.duration, .rating) {
   display: flex;
   align-items: center;
@@ -1698,4 +1704,15 @@ input ::placeholder {
     font-size: 30px;
     transform: rotate(-0.25turn);
   }
+}
+
+.bttn {
+  border: 1px solid white;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  color: white;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }

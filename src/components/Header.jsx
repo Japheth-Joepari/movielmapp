@@ -1,6 +1,15 @@
 import MovieElmLogo from "../assets/images/movieElm.jpg";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import userImg from "../assets/images/user_prev_ui.png";
 
 export default function Header() {
+  const { image, userSignOut } = useContext(AuthContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
     <>
       <header className="header" data-header>
@@ -19,6 +28,31 @@ export default function Header() {
               </button>
             </div>
           </nav>
+          {/* <select className="bttn" onClick={() => userSignOut()}>
+            <option value="">{name ? name.slice(0, 4) : "User"}</option>
+          </select> */}
+
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <img
+              src={image ? image : userImg}
+              alt="Dropdown Image"
+              onClick={handleImageClick}
+              style={{
+                cursor: "pointer",
+                height: "2.7rem",
+                borderRadius: "50%",
+              }}
+            />
+
+            {isDropdownOpen && (
+              <div>
+                {/* Dropdown Content */}
+                <a href="#" onClick={userSignOut} className="white">
+                  Logout
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </header>
     </>

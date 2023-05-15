@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Detail from "./pages/Detail";
-import ErrorPage from "./pages/ErrorPage";
+import Auth from "./pages/Auth";
+import { AuthProvider } from "./context/AuthContext";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,12 @@ const router = createBrowserRouter([
     props: true,
   },
 
+  {
+    path: "/auth",
+    element: <Auth />,
+    props: true,
+  },
+
   // {
   //   path: "*",
   //   element: <ErrorPage />,
@@ -25,6 +32,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
