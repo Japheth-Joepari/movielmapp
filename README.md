@@ -1,5 +1,5 @@
 # movielmapp
-Built Using Reactjs and Firebase
+Custom Movies App Built Using Reactjs and Firebase
 
 moviesElm App check the live project here 👇
 https://movieselm.vercel.app/
